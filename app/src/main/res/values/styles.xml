@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 定义周一到周日的文字样式 -->
+    <style name="WeekDayStyle">
+        <item name="android:layout_width">0dp</item> <!-- 0dp 配合 weight 使用 -->
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item> <!-- 均分宽度 -->
+        <item name="android:gravity">center</item> <!-- 文字居中 -->
+        <item name="android:textColor">#333333</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">8dp</item>
+    </style>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:gravity="center_horizontal"
+    android:id="@+id/dayContainer">
+
+    <!-- 父容器 padding 改为 0dp 以争取更多空间 -->
+    <!-- 上方留一点点空隙 -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="2dp" />
+
+    <!-- 显示日期数字 -->
+    <TextView
+        android:id="@+id/dayText"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:gravity="center"
+        android:text="1"
+        android:textSize="14sp"
+        android:textColor="#333333"
+        android:textStyle="bold" />
+
+    <!-- 农历日期 -->
+    <TextView
+        android:id="@+id/lunarText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="初一"
+        android:textSize="9sp"
+        android:textColor="#888888"
+        android:layout_marginTop="0dp"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+    <!-- 如果有日程，显示一个小圆点 -->
+    <TextView
+        android:id="@+id/eventIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="●"
+        android:textSize="8sp"
+        android:textColor="#FF5722"
+        android:visibility="gone"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:includeFontPadding="false"
+        android:gravity="center"/>
+
+
+</LinearLayout>

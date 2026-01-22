@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:minHeight="60dp"
+    android:gravity="center_vertical">
+
+    <!-- 时间轴 -->
+    <TextView
+        android:id="@+id/timeLabel"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="13:00"
+        android:textSize="14sp"
+        android:textColor="#555555"
+        android:background="#F0F0F0"/>
+
+    <!-- 日程区域 -->
+    <FrameLayout
+        android:id="@+id/eventsContainer"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_slot_placeholder">
+
+        <!-- 空状态提示 (默认隐藏，点击显示或一直显示但淡色) -->
+        <TextView
+            android:id="@+id/addEventHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ 点击添加日程"
+            android:textSize="12sp"
+            android:textColor="#AAAAAA"
+            android:layout_gravity="center"
+            android:visibility="visible"/>
+
+        <!-- 实际日程将动态添加到这里，或者覆盖显示 -->
+        <LinearLayout
+            android:id="@+id/eventList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </FrameLayout>
+
+</LinearLayout>

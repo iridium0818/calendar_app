@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_input_rounded">
+
+    <!-- 复选框区域 -->
+    <FrameLayout
+        android:id="@+id/checkboxContainer"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/selector_checkbox_bg"
+        android:layout_marginEnd="12dp">
+
+        <ImageView
+            android:id="@+id/checkboxIcon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_check"
+            android:tint="#FFFFFF"
+            android:padding="4dp"
+            android:visibility="gone"/>
+    </FrameLayout>
+
+    <!-- 文本区域 -->
+    <LinearLayout
+        android:id="@+id/textContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tvEventTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Meeting"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:layout_marginTop="2dp"/>
+    </LinearLayout>
+
+</LinearLayout>

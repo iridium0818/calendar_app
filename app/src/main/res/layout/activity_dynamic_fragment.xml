@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DynamicFragmentActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dynamic Fragment Activity" />
+
+    <!--动态注册Fragment方式-->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!--对比静态注册Fragment方式-->
+    <!-- <androidx.fragment.app.FragmentContainerView-->
+    <!-- android:id="@+id/fragment_container-->
+    <!-- android:layout_width="wrap_content"-->
+    <!-- android:layout_height="wrap_content"-->
+    <!-- android:name="com.example.applicationdemo.MyFragment"/> -->
+
+    <Button
+        android:id="@+id/buttonadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Fragment" />
+
+    <Button
+        android:id="@+id/buttonremove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove Fragment" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Return" />
+
+</LinearLayout>

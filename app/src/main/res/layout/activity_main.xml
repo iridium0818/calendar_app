@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".MainActivity">
+
+    <!-- 顶部年月显示 -->
+
+    <!-- 视图切换按钮组 -->
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="#876BCA"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <Button
+            android:id="@+id/btnPrevMonth"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:backgroundTint="#876BCA"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:padding="0dp"
+            android:text="@string/lt"
+            android:textSize="25sp"
+            android:textColor="#FFFFFF" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/monthYearText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2026年 1月"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnNextMonth"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:backgroundTint="#876BCA"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:padding="0dp"
+            android:text="@string/gt"
+            android:textSize="25sp"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/viewToggleGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp">
+
+        <Button
+            android:id="@+id/btnViewMonth"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:text="@string/month"
+            android:textSize="12sp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:padding="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:backgroundTint="#BDA7E7"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnViewWeek"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:text="@string/week"
+            android:textSize="12sp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:padding="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_marginStart="4dp"
+            android:backgroundTint="#BDA7E7"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnViewDay"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:text="@string/day"
+            android:textSize="12sp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:padding="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_marginStart="4dp"
+            android:backgroundTint="#BDA7E7"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+    <!-- 星期表头 -->
+
+    <!-- 日历网格 -->
+
+    <LinearLayout
+        android:id="@+id/weekHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        app:layout_constraintTop_toBottomOf="@id/viewToggleGroup"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            style="@style/WeekDayStyle"
+            android:text="@string/Sunday" />
+
+        <TextView
+            style="@style/WeekDayStyle"
+            android:text="@string/Monday" />
+
+        <TextView
+            style="@style/WeekDayStyle"
+            android:text="@string/Tuesday" />
+
+        <TextView
+            style="@style/WeekDayStyle"
+            android:text="@string/Wednesday" />
+
+        <TextView
+            style="@style/WeekDayStyle"
+            android:text="@string/Thursday" />
+
+        <TextView
+            style="@style/WeekDayStyle"
+            android:text="@string/Friday" />
+
+        <TextView
+            style="@style/WeekDayStyle"
+            android:text="@string/Saturday" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/calendarRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/weekHeader"
+        app:layout_constraintBottom_toTopOf="@id/monthEventsScrollView"
+        android:layout_marginTop="8dp"
+        android:padding="2dp"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="false" />
+
+    <!-- 月视图底部日程列表容器 (默认隐藏，代码控制) -->
+    <ScrollView
+        android:id="@+id/monthEventsScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/calendarRecyclerView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/monthEventsListContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                android:id="@+id/monthEventsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/today_item"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_marginBottom="8dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 添加日程按钮 -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#BDA7E7"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="24dp"
+        android:contentDescription="@string/add_event" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
