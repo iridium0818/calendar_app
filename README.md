@@ -7,25 +7,24 @@
 ### 📅 日历应用程序(Calendar Application)
 日历应用的核心功能实现在以下文件中：
 
-*   **Adapters**: `CalendarAdapter.kt`, `DayTimeAdapter.kt`, `WeekListAdapter.kt` - Manage the display of calendar grids and lists.
-*   **Models**: `CalendarEvent.kt` - Data model for calendar events.
-*   **Receivers**: `EventAlarmReceiver.kt` - Handles alarm notifications for events.
-*   **Utilities**: `LunarUtils.kt` - Helper utilities for Lunar calendar calculations.
+*   **Adapters**: `CalendarAdapter.kt`, `DayTimeAdapter.kt`, `WeekListAdapter.kt` - 负责管理日历网格和列表的显示。
+*   **Models**: `CalendarEvent.kt` - 日历事件的数据模型。
+*   **Receivers**: `EventAlarmReceiver.kt` - 处理事件的闹钟提醒通知。
+*   **Utilities**: `LunarUtils.kt` - 用于农历计算的辅助工具类。
 *   **UI/Activities**: `MainActivity.kt`, `ReminderDialogActivity.kt`.
 
 ### 📚 教学 / 学习代码
 以下文件是我在腾讯菁英班学习过程中的练习和对 Android 组件（Activity、Service、BroadcastReceiver、Fragment）的实验，与主日历功能没有直接关系：
 
-*   **Activities**: `MainActivity2.kt`, `MainActivity3.kt`, `StaticFragmentActivity.kt`, `DynamicFragmentActivity.kt` - Used for testing activity lifecycles and navigation.
-*   **Services**: `MyService.kt` - Service implementation examples.
-*   **Broadcast Receivers**: `DynamicBroadcastReceiver.kt`, `StaticBroadcastReceiver.kt` - Examples of different broadcast receiver implementations.
+*   **Activities**: `MainActivity2.kt`, `MainActivity3.kt`, `StaticFragmentActivity.kt`, `DynamicFragmentActivity.kt` - 用于测试 Activity 生命周期和导航。
+*   **Services**: `MyService.kt` - 服务实现的示例。
+*   **Broadcast Receivers**: `DynamicBroadcastReceiver.kt`, `StaticBroadcastReceiver.kt` - 不同广播接收器实现方式的示例。
 *   **Fragments**: `MyFragment.kt`.
 *   **Reference**: `MainActivity_teach_Reference.txt`.
 
-## Getting Started
+## 项目运行
 
-1.  Clone the repository.
-2.  Open the project in Android Studio.
-3.  Sync with Gradle files.
-4.  Run `MainActivity` to start the Calendar application.
+1.  在 Android Studio 中打开项目。
+2.  同步 Gradle 文件。
+3.  运行 MainActivity 以启动日历应用程序。
 
